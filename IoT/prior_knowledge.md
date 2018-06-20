@@ -17,6 +17,6 @@ GPIO는 General Purpose Input/Output의 약자이다.
 ### NodeMCU로 LED를 사용한다고 할 때: ###
 
 
-1. NodeMCU의 GPIO와 LED의 +부분을 BreadBoard를 통해서 연결한다.
-2. LED의 -부분을 BreadBoard의 Bus부분의 +부분에 연결한다.
-3. 다른 선으로 Bus부분의 +부분과 GND(그라운드)와 연결한다.
+1. NodeMCU의 GPIO와 LED의 '+'부분을 BreadBoard를 통해서 연결한다.
+2. LED의 '-'부분을 BreadBoard의 Bus부분의 '+'부분에 연결한다.
+3. 다른 선으로 Bus부분의 '+'부분과 GND(그라운드)와 연결한다.
