@@ -66,6 +66,7 @@ Read Serial Port
 ~~~
 #define LED_BUILTIN D2;		//LED_BUILTIN defined as D2
 
+// setup() 함수는 시작했을 때나 Reset버튼이 눌렸을 때 처음 한번만 실행되는 함수이다.
 void setup() {		//pinMode() 함수는 꼭 setup() 함수 안에 있어야 한다. 
 	pinMode(LED_BUILTIN, OUTPUT);	//D2는 OUTPUT(출력)이다
 }
