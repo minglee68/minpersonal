@@ -66,8 +66,8 @@ Read Serial Port
 ~~~
 #define LED_BUILTIN D2;		//LED_BUILTIN defined as D2
 
-void setup() {		//Always need pinMode() function in setup() function
-	pinMode(LED_BUILTIN, OUTPUT);
+void setup() {		//pinMode() 함수는 꼭 setup() 함수 안에 있어야 한다. 
+	pinMode(LED_BUILTIN, OUTPUT);	//D2는 OUTPUT(출력)이다
 }
 
 void loop() {		//Loop with delay
@@ -75,5 +75,32 @@ void loop() {		//Loop with delay
 	delay(1000);
 	digitalWrite(LED_BUILTIN, LOW);     //Turn the light off
 	delay(1000);   //Delay for 1000msec
+}
+~~~
+~~~
+int pushButton = D2;		//Button defined as D2
+
+void setup() {
+	Serial.begin(115200);		//Data rate will be 115200
+	pinMode(pushButton, INPUT);	//D2는INPUT(입력)이다
+}
+
+void loop() {
+	int buttonState = digitalRead(pushButton);	//Button이 눌렸는지 눌리지 않았는지 입력받는다
+	Serial.println(buttonState);			//Button의 상태를 Serial Monitor에 출력한다
+}
+~~~
+~~~
+void setup() {
+	Serial.begin(115200);		//Data rate will be 115200
+}
+
+void loop() {
+	while(Serial.available() > 0) {		//Serial Buffer에 읽을 수 있는 characters가 있는 동안 반복한다
+		char buf[50];		//Serial Buffer에 있는 characters를 받는 변수
+		Serial.readBytesUntil('\n', buf, 50);	//'\n'을 읽거나 길이가 50이 될 때까지 읽어들인다
+		Serial.print("got: ");
+		Serial.println(buf);		//결과는  "got: (buf의 내용)"
+	}
 }
 ~~~
