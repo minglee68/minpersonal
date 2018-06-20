@@ -3,12 +3,14 @@
 
 Software
 --------
-1. git				https://git-scm.com/
-2. Arduino Sketch		https://www.arduino.cc/en/Main/Software
-3. ESP8266 Arduino Core		https://www.github.com/esp8266/Arduino
-4. VNC Viewer			https://www.realvnc.com/en/connect/download/viewer/
-	* VNC Connect가 아니라 VNC Viewer이다.
-5. Raspberry Pi OS Image	https://www.raspberrypi.org/downloads/noobs/
+
+Software List            Download URL
+------------------------ ----------------------------------------------------
+1. git			 https://git-scm.com/
+2. Arduino Sketch	 https://www.arduino.cc/en/Main/Software
+3. ESP8266 Arduino Core	 https://www.github.com/esp8266/Arduino
+4. VNC Viewer		 https://www.realvnc.com/en/connect/download/viewer/
+5. Raspberry Pi OS Image https://www.raspberrypi.org/downloads/noobs/
 
 Hardware
 --------

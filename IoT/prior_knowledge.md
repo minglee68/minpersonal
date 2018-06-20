@@ -14,7 +14,8 @@ GPIO는 General Purpose Input/Output의 약자이다.
 	4. 출력하는 값들은 읽을 수도 있고 쓸 수도 있다.
 	5. 입력된 값들은 대부분 IRQs로 사용될 수 있다.
 
-NodeMCU로 LED를 사용한다고 할 때:
+### NodeMCU로 LED를 사용한다고 할 때: ###
+
 
 1. NodeMCU의 GPIO와 LED의 +부분을 BreadBoard를 통해서 연결한다.
 2. LED의 -부분을 BreadBoard의 Bus부분의 +부분에 연결한다.
