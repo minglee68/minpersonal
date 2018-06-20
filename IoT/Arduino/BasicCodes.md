@@ -59,3 +59,21 @@ Read Serial Port
 
 * `val`의 내용을 Serial Monitor에 출력하는 것이다.
 * `Serial.print()`는 개행을 안 하고, `Serial.println()`은 개행을 한다.
+
+
+### Example Codes ###
+
+~~~
+\#define LED\_BUILTIN D2;   //LED\_BUILTIN defined as D2
+
+void setup() {    //Always need pinMode() function in setup() function
+	pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {     //Loop with delay
+	digitalWrite(LED_BUILTIN, HIGH);    //Turn the light on
+	delay(1000);
+	digitalWrite(LED_BUILTIN, LOW);     //Turn the light off
+	delay(1000);   //Delay for 1000msec
+}
+~~~
