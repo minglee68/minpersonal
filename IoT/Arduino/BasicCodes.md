@@ -64,13 +64,13 @@ Read Serial Port
 ### Example Codes ###
 
 ~~~
-\#define LED\_BUILTIN D2;   //LED\_BUILTIN defined as D2
+#define LED_BUILTIN D2;		//LED_BUILTIN defined as D2
 
-void setup() {    //Always need pinMode() function in setup() function
+void setup() {		//Always need pinMode() function in setup() function
 	pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void loop() {     //Loop with delay
+void loop() {		//Loop with delay
 	digitalWrite(LED_BUILTIN, HIGH);    //Turn the light on
 	delay(1000);
 	digitalWrite(LED_BUILTIN, LOW);     //Turn the light off
