@@ -7,13 +7,9 @@ Software
 | Software List          | Download URL                                        |
 |------------------------|-----------------------------------------------------|
 | git                    | https://git-scm.com/                                |
-|------------------------|-----------------------------------------------------|
 | Arduino Sketch         | https://www.arduino.cc/en/Main/Software             |
-|------------------------|-----------------------------------------------------|
 | ESP8266 Arduino Core   | https://www.github.com/esp8266/Arduino              |
-|------------------------|-----------------------------------------------------|
 | VNC Viewer             | https://www.realvnc.com/en/connect/download/viewer/ |
-|------------------------|-----------------------------------------------------|
 | Raspberry Pi OS Image  | https://www.raspberrypi.org/downloads/noobs/        |
 
 Hardware
