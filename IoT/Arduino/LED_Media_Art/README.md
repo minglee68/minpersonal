@@ -23,5 +23,9 @@ D0에서부터 D8까지 점점 빨라지면서 켜졌다가 D8에서부터 D0까
 ### Example6 - 불을 공이 튀는 것처럼 점멸시키기 ###
 하나씩 차례대로 켜졌다 꺼지게 하기
 
+
+### When it is ON ###
 ![ON](on.jpg)
+
+### When it is OFF ###
 ![OFF](off.jpg)
