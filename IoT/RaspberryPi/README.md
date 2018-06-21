@@ -41,3 +41,22 @@ network={
 	* `sudo reboot`를 하고 주소를 확인한다.
 5. VNC나 Putty를 이용해서 연결을 한다.
 	* 처음 user의 이름은 `pi`, 패스워드는 System설정시 바꾼 패스워드이다.
+6. 항상 OS는 최신 상태로 유지해야 한다.
+	* `$ sudo apt-get update` apt-get은 RPi를 위한 command
+	* `$ sudo apt-get upgrade -y` -y option은 모든 질문에 yes라고 대답하는 것
+
+### RPi에 Node.js 설치 ###
+1. `$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
+	* 버전이 10보다 높아지면 그 번호를 적으면 된다. x는 바꿀 필요 없다.
+	* ex) Node.js 버전이 11이 나오면: `.../setup_11.x | sudo -E bash -`
+2. `$ sudo apt install -y nodejs`를 해서 node.js를 설치한다.
+3. `$ node -v`로 설치 됬는지 확인한다. 설치가 성공하면 node.js의 버전넘버가 나타난다.
+~~~
+$ node -v
+v10.4.1
+~~~
+4. `$ node`라고 적으면 node.js가 시작한다. 그 다음부터 적는 command는 다 node.js로 컴파일되어 실행된다. 따라서 Linux Command가 아니다.
+
+### RPi에 MySQL(MariaDB) 설치 ###
+1. `$ sudo apt-get install mysql-server`
+2. `$ sudo mysql -u root -p`를 하면 mysql을 열 수 있다.
