@@ -46,3 +46,15 @@ time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 ### FLUSH PRIVILEGES; ###
 
 * INSERT나 UPDATE, DELETE문은 통해서 사용자를 추가, 삭제하거나 사용자의 권한 등을 바꿨을 때 변경사항을 적용시키기 위한 command이다.
+
+### show databases, show tables ###
+
+* 해당 mysql안에 있는 database들, 또는 해당 database 안에 있는 table들을 List up해주는 것이다.
+
+### describe TABLENAME ###
+
+* TABLENAME의 Table의 Format을 알려주는 것이다. 여기서 각 Field의 이름이나 타입등을 확인할 수 있다.
+
+### select * from TABLENAME ###
+
+* TABLENAME 안에 있는 record들을 List up 해주는 것이다.
