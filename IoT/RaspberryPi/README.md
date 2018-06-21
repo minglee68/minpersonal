@@ -57,6 +57,13 @@ v10.4.1
 ~~~
 4. `$ node`라고 적으면 node.js가 시작한다. 그 다음부터 적는 command는 다 node.js로 컴파일되어 실행된다. 따라서 Linux Command가 아니다.
 
+### RPi에 Express 설치 ###
+1. `$ mkdir myapp` Node.js가 설치되어있는 상태에서 이것을 사용할 directory를 만든다.
+2. `$ cd myapp` 만든 directory로 들어간다.
+3. `$ npm init` 해당 directory에 package.json파일을 만든다.
+	* 여러 항목이 나올텐데, 일단은 다 엔터키를 쳐서 넘기면 된다.
+4. `$ npm install express --save` Express를 설치한다. 그러면 끝난다.
+
 ### RPi에 MySQL(MariaDB) 설치 ###
 1. `$ sudo apt-get install mysql-server`
 2. `$ sudo mysql -u root -p`를 하면 mysql을 열 수 있다.
