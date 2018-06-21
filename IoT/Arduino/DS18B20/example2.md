@@ -22,6 +22,9 @@ float temp = 0;
 
 #define ONE_WIRE_BUS D2;
 
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
 const char* ssid = "your_ssid";		//WiFi의 이름
 const char* password = "your_password";	//WiFi의 비밀번호
 
