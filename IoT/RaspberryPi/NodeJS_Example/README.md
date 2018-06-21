@@ -38,7 +38,7 @@ console.log(foo);	// variable1
 * 재선언할 경우에도 에러가 발생한다.
 * 꼭 사용되기 전에 선언이 되어있어야 한다.
 
-### var express = require('express'); \n var app = express(); ###
+### var express = require('express'); var app = express(); ###
 
 * 위의 두 코드는 한 세트라고 보면 된다.
 * 이 두 코드를 통해서 Express 모듈을 받고 Express Application을 만든다.
