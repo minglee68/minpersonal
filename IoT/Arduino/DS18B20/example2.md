@@ -9,7 +9,7 @@ Example2 - NodeMCU와 DS18B20을 이용해서 받은 온도를 ThingSpeak에 보
 
 ~~~
 
-const char* host = "api.thingspeak.com"; // "https://"다음, 그리고 다음 '/'가 오기 전까지의 내용이다.
+const char* host = "api.thingspeak.com";
 String url = "/update?api_key=your_api_key";
 const int httpPort = 80; 		// Default Port Number
 int interval = 60000;
