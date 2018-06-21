@@ -24,4 +24,11 @@ time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 6. `GRANT ALL PRIVILEGES ON mydb.* TO 'me'@'localhost';`로 유저를 슈퍼 유저로 만든다.
 7. `FLUSH PRIVILEGES;`로 적용시킨다.
 
-
+Graph.html
+-----------
+https://developers.google.com/chart/interactive/docs/gallery/linechart
+위의 사이트로 들어가면 Google Line Chart가 있다.  
+그중에서 Top-X Charts의 코드를 그대로 복사해서 붙인다.  
+그 뒤 data.addColumn()을 다 지우고 거기에 `<%HEADER%>`를 붙이고,  
+data.addRows({ ~~~~~~~~~ ]); 안의 ~~~~~~~~~들을 다 지우고 거기에 `<%DATA%>`를 붙이면 된다.  
+마지막으로 X-axis가 위로 올라가있기 때문에 `0: {side: 'top'}`의 'top'을 'bottom'으로 바꾸면 된다.
