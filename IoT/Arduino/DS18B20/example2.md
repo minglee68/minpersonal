@@ -5,7 +5,7 @@ Example2 - NodeMCU와 DS18B20을 이용해서 받은 온도를 ThingSpeak에 보
 * ThingSpeak에 가입해서 새로운 채널을 만들어 놓는다.
 * 해당 채널의 API Key를 알아 놓는다
 
-여기에선 Http Protocol을 이용해서 정보를 ThingSpeak에 보낸뒤 그 정보가 그래프에 출력되는 것을 확인하는 연습이다.
+여기에선  TCP연결과 Http Request를 이용해서 정보를 ThingSpeak에 보낸뒤 그 정보가 그래프에 출력되는 것을 확인하는 연습이다.
 
 ~~~
 
@@ -51,6 +51,7 @@ void delivering(String payload) {
 		return;
 	}
 	
+	// 온도를 HTTP Request보내기
 	String getheader = "GET "+ String(url) + "&" + String(payload) + " HTTP/1.1";
 	client.println(getheader);
 	client.println("Host: " + String(host));
@@ -98,6 +99,7 @@ void setup() {
 
 unsigned long mark = 0;
 void loop() {
+	// 1분마다 온도값을 받고 ThingSpeak로 보내기
 	if (millis() > mark) {
 		mark = millis() + interval;
 		String payload = working();
