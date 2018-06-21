@@ -20,7 +20,7 @@ float temp = 0;
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS D2;
+#define ONE_WIRE_BUS D2
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
@@ -58,11 +58,12 @@ void delivering(String payload) {
 	client.println();
 
 	Serial.println(getheader);
+	// Serial Monitor에 ThingSpeak로 보내는 동안 이루어지는 절차들을 보여준다
 	while (client.connected()) {
 		String line = client.readStringUntil('\n');
-		Serial.print(line);
+		Serial.println(line);
 	}
-	Serial.println(line);
+	Serial.println("Done cycle.");
 }
 
 void connect_ap() {
@@ -97,8 +98,9 @@ void setup() {
 
 unsigned long mark = 0;
 void loop() {
-if (millis() > mark) {
-	mark = millis() + interval;
-	String payload = working();
-	delivering(payload);
+	if (millis() > mark) {
+		mark = millis() + interval;
+		String payload = working();
+		delivering(payload);
+	}
 }
