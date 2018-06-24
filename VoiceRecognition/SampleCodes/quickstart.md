@@ -37,8 +37,9 @@ def run_quickstart():
     // 지정한 음성파일을 지정한 설정으로 음성인식을 한다.
     response = client.recognize(config, audio)
 
-    // 한 줄씩 받아서 프린트한다.
+    // 음성 파일 전체를 출력할 때 까지 한 줄씩 받아서 출력한다.
     for result in response.results:
+    	// 첫번째 alternatives가 가장 일치율(confidence)가 높은 문장이다
         print('Transcript: {}'.format(result.alternatives[0].transcript))
 
 
