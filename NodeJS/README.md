@@ -1,6 +1,8 @@
 Node.js 시작하기
 =================
 
+(이 자료는 https://www.youtube.com/watch?v=uk2gSHbnhAI 의 강의를 정리한 것이다.)  
+  
 본래 과거의 Client Server Architecture는 Multi-Threaded Model을 따랐다.  
 Client Server Architecture이란 Client가 Server에 HTTP Request를 보내면 그에 따른 행동을 서버가 데이터베이스를 활용하면서 하고 Response를 돌려보내는 방식이다.   
 과거의 Multi-Threaded Model이란 Client가 Server에 HTTP Request를 보내면 서버에서 그에 따른 Thread를 만들어서 그 Thread가 Request에 따른 행동을 하는 것이다. 여기의 단점은 Request를 받으면 받을 수록 Thread가 쌓인다는 점인데, 만일 어떤 Shared Resources를 다수의 Thread가 사용하려고 하면 Shared Resources는 한번에 하나의 Thread만 받기 때문에 다른 Thread들은 차례대로 기다려야 된다는 단점이 있다.  
