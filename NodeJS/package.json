@@ -4,7 +4,8 @@
   "description": "demo",
   "main": "first_example.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10"
   },
   "devDependencies": {},
   "scripts": {
