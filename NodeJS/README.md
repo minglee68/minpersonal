@@ -11,4 +11,4 @@ Client Server Architecture이란 Client가 Server에 HTTP Request를 보내면 �
 * Cross Platform으로 윈도우, 맥, 리눅스 등 다수의 OS상에서 사용 가능하다.
 * HTTP Request가 주어지면 그 Request에 따라서 Event가 만들어지고, Event가 만들어짐에 따라서 자동으로 Event-Loop가 시작되며, callback을 할 필요가 없어지면 Event-Loop를 끝낸다.
 * 다수의 Request가 들어오면 각각의 Event를 만들어서 Event Queue안에 넣어 놓고, Event-Loop라는 Single Thread안에 동시에 넣어서 동시에 작동이 되게 하고, 각각의 callback에 따라서 Request를 보낸 Client로 Response가 된다.
-
+* 본래의 방식이 Synchronous방식이라고 하면 위의 방식은 Asynchronous 방식이다.
