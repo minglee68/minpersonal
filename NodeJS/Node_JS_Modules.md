@@ -1,7 +1,7 @@
 Node.js에서 자주 사용되는 모듈들
 ================================
 
-1. NPM (Node Package Manager)
+ NPM (Node Package Manager)
 ------------------------------
 * Node Package Manager의 줄임말이다.
 * Node.js의 패키지들을 설치하는 것과 버전을 다루는 것을 담당한다.
@@ -20,7 +20,7 @@ ex)
 	6. 이 상태에서 'node\_modules'를 지우고 프로젝트만 공유하고 받은 사람은 `npm install`을 하면 받은 package.json에 따라서 패키지를 자동적으로 설치한다.
 	7. express 패키지를 지우고 싶다면 `npm uninstall express --save`를 하면 된다.
 
-2. Globals (Global Objects) - globalExample.js
+ Globals (Global Objects) - globalExample.js
 -----------------------------------------------------
 * 모든 모듈에서 사용할 수 있는 Object들이다.
 * `__dirname`은 지금 실행한 코드가 있는 디렉토리의 path를 알려주고, `__filename`은 지금 실행한 코드가 있는 파일의 path를 알려준다.
@@ -29,7 +29,7 @@ ex)
 * `setImmediate(callback, [, ...args])`는 I/O Event의 callback이 실행된 뒤 바로 실행되는 것이다. setTimeout()이나 setInterval()이 시작되기 전에 실행된다.
 * 'globaleExample.js'를 실행시켜보면 세 개의 setTimeout(), 그리고 하나의 setInterval()이 있지만 순서대로 되는 것이 아니라 동시에 실행되고 delay시간이 가장 적은 것부터 실행되는 것을 볼 수 있다. 1초가 제일 먼저, 2초가 그 다음, 그리고 5초일 때에는 setTimeout()과 setInterval()이 동시에 출력되는 것을 볼 수 있다. 마지막으로 setInterval()은 5초마다 계속 반복되서 출력되고 있음을 확인할 수 있다.
 
-3. File System
+ File System
 ----------------------
 * 'fs'라는 이름이 파일 시스템의 모듈이다.
 * Synchronous방식과 Asynchronous방식 두가지가 있는데, Synchronous방식은 뒤에 Sync라과 붙이면 된다.
@@ -61,7 +61,7 @@ ex)
 	* **data**는 적혀질 데이터이다.
 	* **callback<function>** = function(err, bytesRead, buffer){}
 
-4. Events - eventExample.js
+ Events - eventExample.js
 ------------------------------------
 * Node.js에서는 모든 상호작용이 이벤트이다. 
 	* request도 event, response도 event 등등...
@@ -72,7 +72,7 @@ ex)
 * `eventEmitter.emit('event_name')`은 'event\_name'으로 이벤트를 emit한다.
 * `eventEmitter.on('event_name', eventHandler)`은 'event\_name'으로 emit되면 eventHandler가 실행된다.
 
-5. HTTP - httpExample.js
+ HTTP - httpExample.js
 -------------------------------
 * HTTP는 Client로부터 Server가 받는 Request나 보내는 Response를 담당하는 모듈이다.
 * URL로 request를 받을 수도 있다.
@@ -81,7 +81,7 @@ ex)
 * `console.log(pathname)`으로 출력한다.
 * `localhost:3000/somerequest`라고 URL창에 치면 콘솔에 '/somerequest'라고 나오는 것을 확인할 수가 있다.
 
-6. Express
+ Express
 -----------------
 * Node.js의 대표적인 프레임워크이다. 
 * `var express = require('express')`로 express모듈을 불러들인다.
