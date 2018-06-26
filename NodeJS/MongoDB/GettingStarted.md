@@ -19,6 +19,7 @@ MongoDB 시작하기
 	* --logappend는 log를 계속 덧붙이라는 것이다.
 9. `net start MongoDB`라고 치면 MongoDB가 뒤에서 계속 실행된다.
 10. `mongo`라고 치면 MongoDB의 shell이 시작된다.
+11. 참고로 mongo server를 끝내기 위해선 `use admin`으로 admin db로 들어가서 `db.shutdownServer()`을 하면 된다.
 
 
 기본적인 Command들
