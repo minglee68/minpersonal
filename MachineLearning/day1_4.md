@@ -1,5 +1,5 @@
-CNN
-====
+Convolutional Neural Networks (CNN)
+===================================
 
 Introduction to CNN
 --------------------
