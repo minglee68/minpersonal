@@ -1,4 +1,4 @@
-Neural Network Network
+Neural Network
 =======================
 
 Single-layer Perceptron
