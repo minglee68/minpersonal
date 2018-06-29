@@ -70,7 +70,7 @@ app.post('/login', function(req, res){
 		assert.equal(err, null);
 		console.log("Successfully connected to userInfo DB");
 		findDocumentsQuery(db, idQuery, password, function(result){
-			var html = fs.readFile('./some.html', function(err, html){
+			var html = fs.readFile('./result.html', function(err, html){
 				html = " " + html;
 				html = html.replace("<%RESULT%>", result);
 
@@ -94,11 +94,23 @@ app.post('/register', function(req, res){
 		checkDocumentsQuery(db, idQuery, function(result){
 			if (result == false){
 				insertDocuments(db, query, function(){
+					var html = fs.readFile('./result.html', function(err, html){
+						html = " " + html;
+						html = html.replace("<%RESULT%>", "Register Complete!");
+
+						res.set('Content-Type', 'text/html');
+						res.send(html);
+					});
         	                        db.close();
-                	                res.sendFile(path.join(__dirname + '/complete.html'));
                         	});
 			} else {
-				res.sendFile(path.join(__dirname + '/already.html'));
+				var html = fs.readFile('./result.html', function(err, html){
+					html = " " + html;
+					html = html.replace("<%RESULT%>", "Account already exists!");
+
+					res.set('Content-Type', 'text/html');
+					res.send(html);
+				});
 				db.close();
 			}
 
