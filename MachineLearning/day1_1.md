@@ -1,8 +1,5 @@
-1PM ~ 6PM
-==========
-
 Introduction to AI
--------------------
+===================
 
 * AI > Machine Learning > Deep Learning
 * AI vs SW
