@@ -116,5 +116,18 @@ var app = require('../app');
 
 ### app.js
 
-* 이 파일은 express application object를 만들고, 
+* 이 파일은 express application object를 만들고, 여러 setting과 middleware를 여기서 만들어 놓고 모듈로 export한다.
+
+~~~
+var express = require('express');
+var app = express();
+...
+module.exports = app;
+~~~
+
+
+
+
+
+
 
