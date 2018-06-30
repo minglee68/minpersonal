@@ -95,7 +95,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);                        
         console.log("connected successfully to server");
 
-	insertDocuments(db, function(err, db){
+	insertDocuments(db, function(){
 		db.close();
 	});
 });
@@ -129,7 +129,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        findDocument(db, function(err, db){
+        findDocument(db, function(){
                 db.close();
         });
 });
@@ -160,7 +160,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        findDocuments(db, function(err, db){
+        findDocuments(db, function(){
                 db.close();
         });
 });
@@ -192,7 +192,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        findDocumentsQuery(db, function(err, db){
+        findDocumentsQuery(db, function(){
                 db.close();
         });
 });
@@ -223,7 +223,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        updateDocument(db, function(err, db){
+        updateDocument(db, function(){
                 db.close();
         });
 });
@@ -256,7 +256,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        removeDocument(db, function(err, db){
+        removeDocument(db, function(){
                 db.close();
         });
 });
@@ -285,7 +285,7 @@ MongoClient.connect(url, function(err, db){
         assert.equal(null, err);
         console.log("connected successfully to server");
 
-        removeDocument(db, function(err, db){
+        removeDocument(db, function(){
                 db.close();
         });
 });
