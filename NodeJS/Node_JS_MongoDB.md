@@ -4,11 +4,11 @@ Node.js와 MongoDB
 MongoDB와의 연결
 ----------------
 ~~~
-var MongoClient = require('mongodb').MongoClient;	// 1 
+var MongoClient = require('mongodb').MongoClient;	// 1
 var assert = require('assert');				// 2
 
 var url = 'mongodb://localhost:27017/myproject';	// 3
-						
+
 MongoClient.connect(url, function(err, db){		// 4
 	assert.equal(null, err);			// 5
 	console.log("connected successfully to server");// 6
@@ -40,6 +40,7 @@ var insertDocument = function(db, callback){				// 1
                 assert.equal(1, result.ops.length);			// 4
                 console.log("Inserted 1 document into the collection");
                 callback(result);					// 5
+							  db.close();						// 7
         });
 }
 
@@ -53,7 +54,7 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
 	insertDocument(db, function(){					// 6
-		db.close();						// 7
+
 	});
 });
 ~~~
@@ -72,17 +73,18 @@ MongoClient.connect(url, function(err, db){
 ~~~
 // 여러 개 Insert하기
 var insertDocuments = function(db, callback){		
-	var collection = db.collection('documents');	
+	var collection = db.collection('documents');
         collection.insertMany([				// 1
 	        {a : 1}, 				// 2
 		{a : 2}, 				// 2
 		{a : 3}					// 2
         ], function(err, result){			
                 assert.equal(err, null);		
-                assert.equal(3, result.result.n);	
+                assert.equal(3, result.result.n);
                 assert.equal(3, result.ops.length);
                 console.log("Inserted 3 documents into the collection");
                 callback(result);
+								db.close();
         });
 }
 
@@ -96,14 +98,14 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
 	insertDocuments(db, function(err, db){
-		db.close();
+
 	});
 });
 
 ~~~
 ### Code 설명 ###
 1. 이전의 하나만 Insert하는 코드와 거의 비슷하지만, insertOne()함수 대신에 insertMany()함수를 사용한다.
-2. Array형식으로 document들을 나열해서 올린다. 
+2. Array형식으로 document들을 나열해서 올린다.
 
 
 Document를 Find하기
@@ -117,6 +119,7 @@ var findDocument = function(db, callback){
 		console.log("Found the following document");
 		console.log(doc);
 		callback(doc);
+		db.close();
 	});
 }
 
@@ -130,12 +133,12 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         findDocument(db, function(err, db){
-                db.close();
+
         });
 });
 ~~~
 ### Code 설명 ###
-1. findOne()으로 하나의 document만 찾는다. 
+1. findOne()으로 하나의 document만 찾는다.
 	* {'a': 1}로 명시되어 있듯이 'a' 항목의 값이 1인 document 하나를 찾아서 callback함수의 doc에 넣는다.
 
 
@@ -148,6 +151,7 @@ var findDocuments = function(db, callback){
                 console.log("Found the following document");
                 console.log(docs);
                 callback(docs);
+								db.close();
         });
 }
 
@@ -161,7 +165,7 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         findDocuments(db, function(err, db){
-                db.close();
+
         });
 });
 ~~~
@@ -180,6 +184,7 @@ var findDocumentsQuery = function(db, callback){
                 console.log("Found the following document");
                 console.log(docs);
                 callback(docs);
+								db.close();
         });
 }
 
@@ -193,7 +198,7 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         findDocumentsQuery(db, function(err, db){
-                db.close();
+
         });
 });
 ~~~
@@ -211,6 +216,7 @@ var updateDocument = function(db, callback){
 		assert.equal(1, result.result.n);
 		console.log("Updated the document with the field 'a' equals to 2");
 		callback(result);
+		db.close();
 	});
 }
 
@@ -224,7 +230,7 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         updateDocument(db, function(err, db){
-                db.close();
+
         });
 });
 
@@ -244,6 +250,7 @@ var removeDocument = function(db, callback){
 		assert.equal(1, result.result.n);
 		console.log("Removed the document with the field equal to 3");
 		callback(result);
+		db.close();
 	});
 }
 
@@ -257,7 +264,7 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         removeDocument(db, function(err, db){
-                db.close();
+
         });
 });
 
@@ -269,10 +276,11 @@ MongoClient.connect(url, function(err, db){
 Collection에 Index를 만들기
 -----------------------------
 ~~~
-var indexCollection = function(db, callback){	
+var indexCollection = function(db, callback){
 	db.collection('documents').createIndex({ "a": 1 }, function(err, results){  // 1
 		console.log(results);
 		callback();
+		db.close();
 	});
 }
 
@@ -286,11 +294,10 @@ MongoClient.connect(url, function(err, db){
         console.log("connected successfully to server");
 
         removeDocument(db, function(err, db){
-                db.close();
+
         });
 });
 
 ~~~
 ### Code 설명 ###
 1. "a" 항목을 사용해서 오름차순으로 Index를 만든다.
-
