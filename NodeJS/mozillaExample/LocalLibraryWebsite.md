@@ -116,7 +116,7 @@ var app = require('../app');
 
 ### app.js
 
-* 이 파일은 express application object를 만들고, 여러 setting과 middleware를 여기서 만들어 놓고 모듈로 export한다.
+* 이 파일은 express application object를 만들고, 여러 setting과 middleware를 여기서 만들어 놓고 모듈로 export한다. 이것을 통해서 /bin/www가 app모듈을 사용하는 것이다.
 
 ~~~
 var express = require('express');
@@ -124,6 +124,15 @@ var app = express();
 ...
 module.exports = app;
 ~~~
+
+이제부터 우리가 쓰는 app.js에 대한 구체적인 설명을 해본다.
+
+1. 먼저 
+
+
+
+
+
 
 
 
