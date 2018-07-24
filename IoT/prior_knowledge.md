@@ -3,7 +3,7 @@ Things you should know first
 
 ### GPIO란? ###
 
-GPIO는 General Purpose Input/Output의 약자이다.
+'GPIO'는 General Purpose Input/Output의 약자이다.
 
 * 입력으로서 동작할 경우 전자회로 외의 부분에서 디지털신호를 받아온다.
 * 출력으로서 동작할 경우 다른 디바이스의 제어나 신호를 보내주는 역할을 한다.

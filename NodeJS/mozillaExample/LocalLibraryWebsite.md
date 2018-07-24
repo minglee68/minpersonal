@@ -363,7 +363,10 @@ http://mongoosejs.com/docs/validation.html
 Virtual Property란 Document가 get하거나 set할 수 있는 property이지만 그것이 영구적으로 MongoDB에는 저장되지 않는 property이다. 우리는 나중에 각 model record를 위한 unique URL을 위해서 Virtual Property를 사용할 것이다.  
   
 ### Method와 Query Helper
-
+Schema에는 Field에 대한 정보 뿐만이 아니라 Instance Method, Static Method, 그리고 Query Helper들도 들어갈 수 있다. Instance Method와 Static Method는 비슷하지만 차이가 있다면 Instance Method는 특정 Record에서만 작동되고 그 Object를 사용할 수 있다는 것이다.   
+  
+### Model 사용법
+Schema와 Model을 만들었다면, 이제 Model을 사용하는 방법을 봐보자. 
 
 
 
